@@ -1,5 +1,8 @@
 package com.codeclan.example.Shop_Exchange.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.ArrayList;
@@ -26,8 +29,10 @@ public class User {
     @Column(name="email")
     private Email email;
 
+
     @OneToMany(mappedBy = "user")
     private List<Product> products;
+
 
     @OneToMany(mappedBy = "user")
     private List<Product> borrowedProducts;
