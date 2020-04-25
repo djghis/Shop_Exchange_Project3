@@ -99,6 +99,22 @@ public class User {
     public void setBorrowedProducts(List<Product> borrowedProducts) {
         this.borrowedProducts = borrowedProducts;
     }
+
+    public void addProduct(Product product){
+        this.products.add(product);
+    }
+
+    public void borrowProduct(Product product){
+        this.borrowedProducts.add(product);
+    }
+
+    public void deleteProduct(Product product){
+        this.products.remove(product);
+    }
+
+    public void returnProduct(Product product){
+        this.borrowedProducts.remove(product);
+    }
 }
 
 
