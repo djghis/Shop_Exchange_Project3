@@ -33,8 +33,21 @@ public class DataLoader implements ApplicationRunner {
         User lilyPad = new User("Lily Pad", "2 Warrender Park Road EH9 2HQ", "0131 00000", "lilypadflowers@aol.com");
         userRepository.save(lilyPad);
 
+        User vasileiosFlowers = new User("Vasileios Flowers","7/37 Princes Street EH1 2JJ","0131 141414","vs@gmail.com");
+        userRepository.save(vasileiosFlowers);
+
+
         Product fishBowl = new Product(lilyPad, vases, null, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+
         productRepository.save(fishBowl);
+
+        vasileiosFlowers.borrowProduct(fishBowl);
+        userRepository.save(vasileiosFlowers);
+
+
+
     }
+
+
 
 }

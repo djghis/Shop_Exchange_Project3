@@ -34,12 +34,15 @@ public class Product {
     @Column
     private int quantityLent;
 
+    @Enumerated(EnumType.STRING)
     @Column
     private Status status;
 
+    @Enumerated(EnumType.STRING)
     @Column
     private RentCondition rentCondition;
 
+    @Enumerated(EnumType.STRING)
     @Column
     private ReplaceStatus replaceStatus;
 
@@ -157,5 +160,9 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public void lend(User user){
+        this.borrower = user;
     }
 }

@@ -10,7 +10,4 @@ public enum RentCondition {
         this.rentCondition=rentCondition;
     }
 
-    public String getRentCondition() {
-        return rentCondition;
-    }
 }
