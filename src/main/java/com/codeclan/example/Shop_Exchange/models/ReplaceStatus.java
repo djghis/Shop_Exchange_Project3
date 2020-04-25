@@ -2,7 +2,7 @@ package com.codeclan.example.Shop_Exchange.models;
 
 public enum ReplaceStatus {
 
-    OLD("Old for new"),
+    NEW("New For Old"),
     FEE("Pay Fee");
 
     private final String replaceStatus;

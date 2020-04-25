@@ -25,9 +25,9 @@ public class User {
     @Column(name="phone_number")
     private String phone_number;
 
-    @Email
+
     @Column(name="email")
-    private Email email;
+    private String email;
 
 
     @OneToMany(mappedBy = "user")
@@ -37,7 +37,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Product> borrowedProducts;
 
-    public User(String name, String address, String phone_number, @Email Email email) {
+    public User(String name, String address, String phone_number, String email) {
         this.name = name;
         this.address = address;
         this.phone_number = phone_number;
@@ -81,11 +81,11 @@ public class User {
         this.phone_number = phone_number;
     }
 
-    public Email getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Email email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
