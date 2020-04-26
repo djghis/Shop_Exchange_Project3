@@ -2,6 +2,7 @@ package com.codeclan.example.Shop_Exchange.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,11 +29,11 @@ public class User {
     @Column(name="email")
     private String email;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
-//    @JsonBackReference
+    @JsonIgnore
     @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
 
