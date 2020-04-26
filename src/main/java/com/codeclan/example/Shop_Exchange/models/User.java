@@ -33,7 +33,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
-
+//    @JsonBackReference
     @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
 

@@ -1,5 +1,7 @@
 package com.codeclan.example.Shop_Exchange.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,14 +12,17 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="borrower_id")
     private User borrower;
