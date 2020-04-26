@@ -1,5 +1,6 @@
 package com.codeclan.example.Shop_Exchange.controllers;
 
+import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import com.codeclan.example.Shop_Exchange.models.User;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,12 @@ public class UserController {
     public ResponseEntity<User> putUser(@RequestBody User user){
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value="/{id}")
+    public ResponseEntity<Long> deleteUser(@PathVariable Long id){
+        userRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
 
