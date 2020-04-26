@@ -34,7 +34,7 @@ public class User {
     private List<Product> products;
 
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
 
     public User(String name, String address, String phone_number, String email) {
@@ -111,6 +111,7 @@ public class User {
 
     public void borrowProduct(Product product){
         this.borrowedProducts.add(product);
+        product.setBorrower(this);
     }
 
     public void deleteProduct(Product product){

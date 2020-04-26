@@ -162,7 +162,7 @@ public class Product {
         this.price = price;
     }
 
-    public void lend(User user){
-        this.borrower = user;
-    }
+//    public void lend(User user){
+//        this.borrower = user;
+//    }
 }

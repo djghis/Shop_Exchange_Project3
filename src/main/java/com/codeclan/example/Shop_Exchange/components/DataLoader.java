@@ -43,6 +43,7 @@ public class DataLoader implements ApplicationRunner {
 
         vasileiosFlowers.borrowProduct(fishBowl);
         userRepository.save(vasileiosFlowers);
+        productRepository.save(fishBowl);
 
 
 
