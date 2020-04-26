@@ -4,6 +4,7 @@ import com.codeclan.example.Shop_Exchange.models.User;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,16 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> postUser(@RequestBody User user){
+    public ResponseEntity<User> postUser(@RequestBody User user) {
         userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
+
+    @PutMapping(value="/{id}")
+    public ResponseEntity<User> putUser(@RequestBody User user){
+        userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+
 }
