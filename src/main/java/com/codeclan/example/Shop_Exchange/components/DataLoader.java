@@ -2,6 +2,7 @@ package com.codeclan.example.Shop_Exchange.components;
 
 import com.codeclan.example.Shop_Exchange.models.*;
 import com.codeclan.example.Shop_Exchange.repositories.CategoryRepository;
+import com.codeclan.example.Shop_Exchange.repositories.ProductDescriptionRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    ProductDescriptionRepository productDescriptionRepository;
 
     public DataLoader(){
 
@@ -48,24 +52,42 @@ public class DataLoader implements ApplicationRunner {
         User ggSunflowers = new User("GG Flowers","6 Millar Place, EH10 2HQ","0131 14 14 14","gg@hotmail.com");
         userRepository.save(ggSunflowers);
 
-        Product fishBowl20 = new Product(lilyPad, vases, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
-        productRepository.save(fishBowl20);
+        ProductDescription fishBowl20 = new ProductDescription("fish bowl 20cm", "It's a fish bowl", vases, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        productDescriptionRepository.save(fishBowl20);
 
-        Product fluteVase20 = new Product(ggSunflowers, vases, "flute vase 20cm","It is a flute vase",20,0,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,23);
-        productRepository.save(fluteVase20);
+        ProductDescription fluteVase20 = new ProductDescription("flute vase 20cm","It is a flute vase",vases,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,23);
+        productDescriptionRepository.save(fluteVase20);
 
-        Product fishBowl30 = new Product(lilyPad, vases, "fish bowl 30cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
-        productRepository.save(fishBowl30);
+        ProductDescription fishBasket30 = new ProductDescription("fish basket 30cm", "It's a fish basket", baskets,Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        productDescriptionRepository.save(fishBasket30);
 
-        Product fluteVase70 = new Product(ggSunflowers, vases, "flute vase 70cm","It is a flute vase",5,0,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,50);
-        productRepository.save(fluteVase70);
-
-
-        vasileiosFlowers.borrowProduct(fishBowl20);
-        userRepository.save(vasileiosFlowers);
-        productRepository.save(fishBowl20);
+        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,50);
+        productDescriptionRepository.save(fluteVase70);
 
 
+        Product prod1 = new Product(lilyPad,fishBowl20);
+        productRepository.save(prod1);
+
+        Product prod2 = new Product(lilyPad,fishBowl20);
+        productRepository.save(prod2);
+
+        Product prod3 = new Product(lilyPad,fishBowl20);
+        productRepository.save(prod3);
+
+        Product prod4 = new Product(lilyPad,fishBowl20);
+        productRepository.save(prod4);
+
+        Product prod5 = new Product(lilyPad, fluteVase20);
+        productRepository.save(prod5);
+
+        Product prod6 = new Product(lilyPad, fluteVase20);
+        productRepository.save(prod6);
+
+        Product prod7 = new Product(lilyPad, fluteVase20);
+        productRepository.save(prod7);
+
+        Product prod8 = new Product(lilyPad, fluteVase20);
+        productRepository.save(prod8);
 
     }
 

@@ -1,11 +1,5 @@
 package com.codeclan.example.Shop_Exchange.models;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +17,11 @@ public class Category {
 //    @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy="category")
-    private List<Product> products;
+    private List<ProductDescription> productDescriptions;
 
     public Category (String name) {
         this.name = name;
-        this.products = new ArrayList<>();
-
-
+        this.productDescriptions = new ArrayList<>();
     }
 
     public Category() {
@@ -51,11 +43,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<ProductDescription> getProductDescriptions() {
+        return productDescriptions;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public void setProductDescriptions(List<ProductDescription> productDescriptions) {
+        this.productDescriptions = productDescriptions;
     }
 }
