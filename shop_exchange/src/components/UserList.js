@@ -1,9 +1,8 @@
 import React from 'react'
-import User from './User' 
 
 const UserList = (props) => {
-    const users = props.users.map(user => {
-        return <option value = {user.id}>{user.name}</option>
+    const users = props.users.map((user, index) => {
+        return <option value = {user.id} key={user.id}>{user.name}</option>
     })  
   return (
     <div>

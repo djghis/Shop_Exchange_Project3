@@ -14,6 +14,7 @@ export class Homepage extends Component {
     render() {
         return (
             <div>
+                <button className="admin-button">Admin</button>
                 <UsersContainer />
             </div>
         )

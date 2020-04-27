@@ -1,10 +1,20 @@
 import React from 'react';
 import './App.css';
 import Homepage from './containers/Homepage';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NavBar from './components/navbar'
+
 
 function App() {
   return (
-    <Homepage/>
+    <Router >
+      <React.Fragment>
+         <NavBar/>
+         <Switch>
+         <Route exact path="/" component={Homepage} />
+        </Switch>
+     </React.Fragment>
+    </Router>
   );
 }
 
