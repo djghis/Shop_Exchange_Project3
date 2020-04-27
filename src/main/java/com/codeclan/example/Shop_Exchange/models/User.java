@@ -30,10 +30,12 @@ public class User {
     private String email;
 
     @JsonIgnore
+//    @JsonBackReference
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
     @JsonIgnore
+//    @JsonBackReference
     @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
 

@@ -30,20 +30,40 @@ public class DataLoader implements ApplicationRunner {
         Category vases = new Category("vases");
         categoryRepository.save(vases);
 
+        Category baskets = new Category("baskets");
+        categoryRepository.save(baskets);
+
+        Category arches = new Category("arches");
+        categoryRepository.save(arches);
+
+        Category sundries = new Category("sundries");
+        categoryRepository.save(sundries);
+
         User lilyPad = new User("Lily Pad", "2 Warrender Park Road EH9 2HQ", "0131 00000", "lilypadflowers@aol.com");
         userRepository.save(lilyPad);
 
         User vasileiosFlowers = new User("Vasileios Flowers","7/37 Princes Street EH1 2JJ","0131 141414","vs@gmail.com");
         userRepository.save(vasileiosFlowers);
 
+        User ggSunflowers = new User("GG Flowers","6 Millar Place, EH10 2HQ","0131 14 14 14","gg@hotmail.com");
+        userRepository.save(ggSunflowers);
 
-        Product fishBowl = new Product(lilyPad, vases, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        Product fishBowl20 = new Product(lilyPad, vases, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        productRepository.save(fishBowl20);
 
-        productRepository.save(fishBowl);
+        Product fluteVase20 = new Product(ggSunflowers, vases, "flute vase 20cm","It is a flute vase",20,0,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,23);
+        productRepository.save(fluteVase20);
 
-        vasileiosFlowers.borrowProduct(fishBowl);
+        Product fishBowl30 = new Product(lilyPad, vases, "fish bowl 30cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        productRepository.save(fishBowl30);
+
+        Product fluteVase70 = new Product(ggSunflowers, vases, "flute vase 70cm","It is a flute vase",5,0,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,50);
+        productRepository.save(fluteVase70);
+
+
+        vasileiosFlowers.borrowProduct(fishBowl20);
         userRepository.save(vasileiosFlowers);
-        productRepository.save(fishBowl);
+        productRepository.save(fishBowl20);
 
 
 
