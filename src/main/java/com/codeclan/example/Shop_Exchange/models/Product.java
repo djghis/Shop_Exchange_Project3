@@ -54,10 +54,10 @@ public class Product {
     @Column
     private int price;
 
-    public Product(User user, Category category, User borrower, String name, String description, int quantity, int quantityLent, Status status, RentCondition rentCondition, ReplaceStatus replaceStatus, int price) {
+    public Product(User user, Category category, String name, String description, int quantity, int quantityLent, Status status, RentCondition rentCondition, ReplaceStatus replaceStatus, int price) {
         this.user = user;
         this.category = category;
-        this.borrower = borrower;
+        this.borrower = null;
         this.name = name;
         this.description = description;
         this.quantity = quantity;

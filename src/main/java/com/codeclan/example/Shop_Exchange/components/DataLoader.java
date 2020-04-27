@@ -37,7 +37,7 @@ public class DataLoader implements ApplicationRunner {
         userRepository.save(vasileiosFlowers);
 
 
-        Product fishBowl = new Product(lilyPad, vases, null, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        Product fishBowl = new Product(lilyPad, vases, "fish bowl 20cm", "It's a fish bowl", 10, 0, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
 
         productRepository.save(fishBowl);
 
