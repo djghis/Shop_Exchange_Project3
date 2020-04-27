@@ -3,12 +3,15 @@ import User from './User'
 
 const UserList = (props) => {
     const users = props.users.map(user => {
-        return <User name = {user.name} />
+        return <option value = {user.id}>{user.name}</option>
     })  
   return (
-    <>
-      { users }
-    </>
+    <div>
+        <span>Select user: </span>
+        <select>
+        { users }    
+        </select>
+    </div>
   )
 }
 
