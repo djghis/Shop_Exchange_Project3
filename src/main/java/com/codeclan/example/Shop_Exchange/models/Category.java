@@ -20,7 +20,7 @@ public class Category {
     @Column
     private String name;
 
-    @JsonIgnore
+//    @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy="category")
     private List<Product> products;

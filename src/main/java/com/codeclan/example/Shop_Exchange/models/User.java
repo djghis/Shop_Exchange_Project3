@@ -29,12 +29,12 @@ public class User {
     @Column(name="email")
     private String email;
 
-    @JsonIgnore
+//    @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
-    @JsonIgnore
+//    @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
