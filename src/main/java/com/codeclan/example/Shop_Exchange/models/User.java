@@ -2,9 +2,9 @@ package com.codeclan.example.Shop_Exchange.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +29,14 @@ public class User {
     @Column(name="email")
     private String email;
 
-
+//    @JsonIgnore
+//    @JsonBackReference
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
-
-    @OneToMany(mappedBy = "user")
+//    @JsonIgnore
+//    @JsonBackReference
+    @OneToMany(mappedBy = "borrower")
     private List<Product> borrowedProducts;
 
     public User(String name, String address, String phone_number, String email) {
@@ -111,6 +113,7 @@ public class User {
 
     public void borrowProduct(Product product){
         this.borrowedProducts.add(product);
+        product.setBorrower(this);
     }
 
     public void deleteProduct(Product product){
