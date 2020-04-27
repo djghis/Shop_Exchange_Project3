@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UsersContainer from './UsersContainer'
 
 export class Homepage extends Component {
     
@@ -13,7 +14,7 @@ export class Homepage extends Component {
     render() {
         return (
             <div>
-                
+                <UsersContainer />
             </div>
         )
     }
