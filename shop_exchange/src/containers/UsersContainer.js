@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Request from '../helpers/request';
+import UserList from '../components/UserList'
 
 
 export class UsersContainer extends Component {
@@ -25,7 +26,7 @@ export class UsersContainer extends Component {
     render() {
         return (
             <div>
-                
+                <UserList users = {this.state.users}/>
             </div>
         )
     }
