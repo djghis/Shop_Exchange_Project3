@@ -1,4 +1,6 @@
 package com.codeclan.example.Shop_Exchange.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,7 @@ public class Category {
     @Column
     private String name;
 
-//    @JsonIgnore
+    @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy="category")
     private List<ProductDescription> productDescriptions;

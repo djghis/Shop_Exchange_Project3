@@ -2,6 +2,7 @@ package com.codeclan.example.Shop_Exchange.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ProductDescription {
     @Column
     private String description;
 
-    @JsonIgnore
+//    @JsonIgnoreProperties(value={"productsde"})
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
