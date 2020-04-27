@@ -15,8 +15,6 @@ export class UsersContainer extends Component {
         const request = new Request()
         request.get('/api/users')
         .then((data)=>{
-            
-            
             this.setState({
                 users:data
             })
