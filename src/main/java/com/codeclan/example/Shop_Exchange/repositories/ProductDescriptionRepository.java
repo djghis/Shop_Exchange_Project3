@@ -6,4 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductDescriptionRepository extends JpaRepository<ProductDescription,Long> {
+
+    //finddescriptioncontaingignorecase
+    //find all ignorecase contains
+
 }
