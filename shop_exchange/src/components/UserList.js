@@ -7,7 +7,7 @@ const UserList = (props) => {
   return (
     <div>
         <span>Select user: </span>
-        <select>
+        <select className="user-select" >
         { users }    
         </select>
     </div>

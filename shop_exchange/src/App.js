@@ -4,6 +4,7 @@ import Homepage from './containers/Homepage';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './components/navbar'
 import AdminContainer from './containers/AdminContainer';
+import UserPageContainer from './containers/UserPageContainer'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
          <Switch>
          <Route exact path="/" component={Homepage} />
          <Route exact path="/admin" component={AdminContainer}/>
+         {/* <Route exact path="/admin" component={admin} /> */}
+          <Route exact path="/user/:id" component={UserPageContainer}/>
         </Switch>
      </React.Fragment>
     </Router>
