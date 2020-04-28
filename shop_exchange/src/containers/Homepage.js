@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import UsersContainer from './UsersContainer'
+// import UsersContainer from './UsersContainer'
 import UserPageContainer from './UserPageContainer'
 
 export class Homepage extends Component {

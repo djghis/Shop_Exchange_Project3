@@ -13,7 +13,8 @@ function App() {
          <NavBar/>
          <Switch>
          <Route exact path="/" component={Homepage} />
-         <Route exact path="/user/:id" component={UserPageContainer}/>
+         {/* <Route exact path="/admin" component={admin} /> */}
+          <Route exact path="/user/:id" component={UserPageContainer}/>
         </Switch>
      </React.Fragment>
     </Router>
