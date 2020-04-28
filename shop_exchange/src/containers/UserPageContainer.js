@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Request from '../helpers/request'
 import UserDetails from '../components/UserDetails'
 import UserProductIndex from '../components/UserProductIndex'
+import AddProductForm from '../components/AddProductForm'
 
 class UserPageContainer extends Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class UserPageContainer extends Component {
             })
         })
     }
+
     
 
   render() {
@@ -36,6 +38,7 @@ class UserPageContainer extends Component {
             <button>My Products</button>
             <button>Borrowed Products</button>
         </div>
+        <AddProductForm    onCreate={this.handleSubmit}/>
         <UserProductIndex products={this.state.user.products}/>
       </div>
     )

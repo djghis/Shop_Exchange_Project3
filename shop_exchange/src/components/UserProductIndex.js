@@ -42,8 +42,8 @@ const UserProductIndex = (props) => {
       return result  
     }
 
-    const productNodes = formatProducts(props.products).map(prod => {
-        return <ProductDetails product={prod} />
+    const productNodes = formatProducts(props.products).map((prod, index) => {
+        return <ProductDetails key={index} product={prod} />
     })
     
   return (
