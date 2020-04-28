@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Request from '../helpers/request'
+import UserDetails from '../components/UserDetails'
 
 class UserPageContainer extends Component {
     constructor(props) {
@@ -11,11 +12,9 @@ class UserPageContainer extends Component {
     }
     
     componentDidMount() {
-        console.log(this.props.match.params.id)
         const request = new Request()
         request.get(`/api/users/${this.props.match.params.id}`)
         .then((data)=>{
-            console.log(data)
             this.setState({
                 user:data
             })
@@ -26,7 +25,7 @@ class UserPageContainer extends Component {
   render() {
     return (
       <>
-        <h1>User Page</h1>
+        <UserDetails user={this.state.user}/>
       </>
     )
   }
