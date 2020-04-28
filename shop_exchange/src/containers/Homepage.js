@@ -17,7 +17,7 @@ export class Homepage extends Component {
             <div>
                 <button className="admin-button">Admin</button>
                 <UsersContainer />
-                <AdminContainer/>
+                
             </div>
         )
     }

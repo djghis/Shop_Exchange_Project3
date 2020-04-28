@@ -3,6 +3,7 @@ import './App.css';
 import Homepage from './containers/Homepage';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './components/navbar'
+import AdminContainer from './containers/AdminContainer';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
          <NavBar/>
          <Switch>
          <Route exact path="/" component={Homepage} />
+         <Route exact path="/admin" component={AdminContainer}/>
         </Switch>
      </React.Fragment>
     </Router>
