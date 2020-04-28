@@ -5,13 +5,18 @@ const ProductDetails = (props) => {
     
   return (
     <div className="product-details">
+      <details>
+      <summary>
       <p>name: {props.product.name} </p>
+      <p>qty:{props.product.qty}</p>
+      </summary>
       <p>desc: {props.product.description} </p>
       <p>category: {props.product.category.name} </p>
       <p>status: {props.product.status} </p>
-      <p>rent noditions: {props.product.rentCodnitions} </p>
+      <p>rent conditions: {props.product.rentConditions} </p>
       <p>replace status: {props.product.replaceStatus} </p>
-      <p>qty:{props.product.qty}</p>
+      
+      </details>
     </div>
   )
 }
