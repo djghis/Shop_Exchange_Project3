@@ -5,6 +5,7 @@ import UserProductIndex from '../components/UserProductIndex'
 import AddProductForm from '../components/AddProductForm'
 import ProductSearch from '../components/ProductSearch'
 import SearchResultIndex from '../components/SearchResultIndex'
+import BorrowedProductList from '../components/BorrowedProductList'
 
 class UserPageContainer extends Component {
     constructor(props) {
@@ -87,6 +88,7 @@ class UserPageContainer extends Component {
        : <div>
         <ProductSearch  handleSearch = {this.handleSearch}/>
         <SearchResultIndex products= {this.state.foundProducts}/>
+        <BorrowedProductList products={this.state.user.borrowedProducts}/>
         </div>
         }
          

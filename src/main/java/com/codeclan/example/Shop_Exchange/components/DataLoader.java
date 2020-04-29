@@ -89,6 +89,9 @@ public class DataLoader implements ApplicationRunner {
         Product prod8 = new Product(lilyPad, fluteVase20);
         productRepository.save(prod8);
 
+        vasileiosFlowers.borrowProduct(prod8);
+        productRepository.save(prod8);
+
     }
 
 

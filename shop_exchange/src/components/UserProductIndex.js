@@ -48,6 +48,7 @@ const UserProductIndex = (props) => {
     
   return (
     <div className="my-products-index">
+    <h3>My products</h3>
       {productNodes}
     </div>
   )

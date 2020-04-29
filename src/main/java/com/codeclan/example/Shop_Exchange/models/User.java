@@ -1,8 +1,10 @@
 package com.codeclan.example.Shop_Exchange.models;
 
+import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 @Entity
 @Table(name="users")
 public class User {
+
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

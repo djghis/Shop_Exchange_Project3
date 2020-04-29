@@ -1,10 +1,10 @@
-import React from 'react';
-import BorrowProductsDetails from './BorrowProductsDetails';
+import React from 'react'
+import ProductDetails from './ProductDetails';
 
+const BorrowedProductList = (props) => {
 
-const SearchResultIndex = (props) => {
     if (!props) {
-        return <p>Search for products</p>
+        return <p>You do not have borrowed products!</p>
     }
 
     const countProducts = (products) => {
@@ -43,16 +43,16 @@ const SearchResultIndex = (props) => {
     }
 
     const productNodes = formatProducts(props.products).map((prod, index) => {
-        return <BorrowProductsDetails key={index} product={prod} />
+        return <ProductDetails key={index} product={prod} />
     })
     
   return (
-    <div className="my-products-index">
-    <h3>Search Results</h3>
+    <div className="borrowed-products-index">
+    <h3>borrowed products</h3>
       {productNodes}
     </div>
   )
 
 }
- 
-export default SearchResultIndex;
+
+export default BorrowedProductList
