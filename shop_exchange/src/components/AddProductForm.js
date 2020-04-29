@@ -58,7 +58,7 @@ class AddProductForm extends Component {
     for (let i = 0; i < this.state.qty; i++) {
       request.post("/api/products", product)
     }
-    
+    this.props.updateProducts() 
   }
 
 

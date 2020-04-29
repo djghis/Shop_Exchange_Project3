@@ -33,7 +33,7 @@ const UserProductIndex = (props) => {
                      description: product.productDescription.description,
                      category: product.productDescription.category,
                      status: product.productDescription.status,
-                     rentConditions: product.productDescription.rentConditions,
+                     rentCondition: product.productDescription.rentCondition,
                      replaceStatus: product.productDescription.replaceStatus,
                      qty: productCount[product.productDescription.id]
                     });

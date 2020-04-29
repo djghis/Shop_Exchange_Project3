@@ -13,7 +13,7 @@ const ProductDetails = (props) => {
       <p>desc: {props.product.description} </p>
       <p>category: {props.product.category.name} </p>
       <p>status: {props.product.status} </p>
-      <p>rent conditions: {props.product.rentConditions} </p>
+      <p>rent condition: {props.product.rentCondition} </p>
       <p>replace status: {props.product.replaceStatus} </p>
       </details>
     </div>

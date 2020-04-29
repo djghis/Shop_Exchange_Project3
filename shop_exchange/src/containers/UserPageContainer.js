@@ -7,15 +7,25 @@ import AddProductForm from '../components/AddProductForm'
 class UserPageContainer extends Component {
     constructor(props) {
       super(props)
-    
       this.state = {
          user: null
       }
+      this.updateProducts = this.updateProducts.bind(this);
     }
     
     componentDidMount() {
         const request = new Request()
         request.get(`/api/users/${this.props.match.params.id}`)
+        .then((data)=>{
+            this.setState({
+                user:data
+            })
+        })
+    }
+
+    updateProducts(){
+      const request = new Request()
+      request.get(`/api/users/${this.props.match.params.id}`)
         .then((data)=>{
             this.setState({
                 user:data
@@ -38,7 +48,7 @@ class UserPageContainer extends Component {
             <button>My Products</button>
             <button>Borrowed Products</button>
         </div>
-        <AddProductForm    onCreate={this.handleSubmit} userId={this.props.match.params.id}/>
+        <AddProductForm onCreate={this.handleSubmit} userId={this.props.match.params.id} updateProducts={this.updateProducts}/>
         <UserProductIndex products={this.state.user.products}/>
       </div>
     )
