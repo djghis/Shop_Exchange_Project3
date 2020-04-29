@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const UserList = (props) => {
     const users = props.users.map((user, index) => {
-        return <li>
+        return <li key={index}>
           <Link to={`/user/${user.id}`}>{user.name}</Link>
           </li>
     })  
   return (
-    <div>
-        <span>Select user: </span>
-        <ul className="user-select" >
+    <div className="user-list">
+        <span>Select User</span>
+        <ul >
         { users }    
         </ul>
     </div>

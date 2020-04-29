@@ -23,10 +23,11 @@ export class ProductSearch extends Component {
 
     render() {
         return (
-            <div>
+        <div className = "product-search">
          <input name="product-search" placeholder="Search for product" onChange = {this.handleChange} value={this.state.searchString}></input>
+         <br/>
          <button className = "search-button" onClick = {this.handleClick}>Search</button>       
-            </div>
+        </div>
         )
     }
 }

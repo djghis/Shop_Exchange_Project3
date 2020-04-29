@@ -5,10 +5,9 @@ const AdminUserList = (props) => {
             return <li key={index}>{user.name}</li>
         })  
       return (
-        <div>
+        <div className="admin-users">
             <ul>
-           {/* <a href={}> { users }  </a>   */}
-           {users}
+            {users}
             </ul>
         </div>
       )

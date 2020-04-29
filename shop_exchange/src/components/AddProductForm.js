@@ -98,29 +98,42 @@ handlePost(productDescription){
       return <option key={category.id} value={index}>{category.name}</option>
     });
     return (
-      <div>
-      <form onSubmit={this.handleSubmit}>
-      <input type="text" placeholder="name" name="name" onChange={this.handleChange} value={this.state.product.name} />
-      <input type="text" placeholder="description" name="description" onChange={this.handleChange} value={this.state.product.description} />
-      <input type="number" placeholder="price" name="price" onChange={this.handleChange} value={this.state.product.price}/>
+      <div >
+      <h3 className="add-product">Add Product</h3>
+      <form onSubmit={this.handleSubmit} className='product-form'>
+      <span>Name: </span>
+      <input type="text" name="name" onChange={this.handleChange} value={this.state.product.name} />
+      <span>Description: </span>
+      <input type="text" name="description" onChange={this.handleChange} value={this.state.product.description} />
+      <span>Price: </span>
+      <input type="number" name="price" onChange={this.handleChange} value={this.state.product.price}/>
+      <span>Quantity: </span>
+      <input name="qty" type="number" placeholder="quantity" onChange={this.handleQuantity} value={this.state.qty}/>
+      <br/>
+      <br/>
+      <span>Category: </span>
       <select name="category" onChange={this.handleCategory} defaultValue="select-category">
         <option disabled value="select-category">Select a category</option>
         {categoryOptions}
       </select>
+      <span>Status: </span>
       <select name ="status" onChange={this.handleChange} defaultValue="select-status">
         <option value="PRIVATE">Private</option>
         <option value="RENT">Rent</option>
         <option value="LEND">Lend</option>
       </select>
+      <span>Rent Condition: </span>
       <select name ="rentCondition" onChange={this.handleChange} defaultValue="select-rentCondition">
         <option value="CLEAN">Clean/Clean</option>
         <option value="DIRTY">Dirty/Dirty</option>
       </select>
+      <span>Replace Status: </span>
       <select name ="replaceStatus" onChange={this.handleChange} defaultValue="select-replaceStatus">
         <option value="NEW">New for old</option>
         <option value="FEE">Pay fee</option>
       </select>
-      <input name="qty" type="number" placeholder="quantity" onChange={this.handleQuantity} value={this.state.qty}/>
+      <br/>
+      <br/>
       <button type="submit">Save</button>
       </form>
       </div>

@@ -48,7 +48,7 @@ const UserProductIndex = (props) => {
     
   return (
     <div className="my-products-index">
-    <h3>My products</h3>
+    <h3>My Products</h3>
       {productNodes}
     </div>
   )

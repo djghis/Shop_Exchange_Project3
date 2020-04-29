@@ -48,7 +48,7 @@ const BorrowedProductList = (props) => {
     
   return (
     <div className="borrowed-products-index">
-    <h3>borrowed products</h3>
+    <h3>Borrowed Products</h3>
       {productNodes}
     </div>
   )
