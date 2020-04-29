@@ -3,14 +3,17 @@ import Request from '../helpers/request'
 import UserDetails from '../components/UserDetails'
 import UserProductIndex from '../components/UserProductIndex'
 import AddProductForm from '../components/AddProductForm'
+import ProductSearch from '../components/ProductSearch'
 
 class UserPageContainer extends Component {
     constructor(props) {
       super(props)
       this.state = {
-         user: null
+         user: null,
+         foundProducts:[]
       }
       this.updateProducts = this.updateProducts.bind(this);
+      this.handleSearch = this.handleSearch.bind(this);
     }
     
     componentDidMount() {
@@ -33,6 +36,16 @@ class UserPageContainer extends Component {
         })
     }
 
+    handleSearch(searchString){
+      const request = new Request()
+      request.get(`/api/products/search/${searchString}`)
+      .then((data)=>{
+        this.setState({
+          foundProducts:data
+        })
+      })
+    }
+
     
 
   render() {
@@ -50,6 +63,7 @@ class UserPageContainer extends Component {
         </div>
         <AddProductForm onCreate={this.handleSubmit} userId={this.props.match.params.id} updateProducts={this.updateProducts}/>
         <UserProductIndex products={this.state.user.products}/>
+        <ProductSearch  handleSearch = {this.handleSearch}/>
       </div>
     )
   }

@@ -2,6 +2,7 @@ package com.codeclan.example.Shop_Exchange.controllers;
 
 
 import com.codeclan.example.Shop_Exchange.models.Product;
+import com.codeclan.example.Shop_Exchange.models.Status;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,5 +44,10 @@ public class ProductController {
     public ResponseEntity<Long> deleteProduct(@PathVariable Long id){
         productRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+
+    @GetMapping(value="/search/{searchString}")
+    public ResponseEntity<List<Product>> findProductByNameOrDescription(@PathVariable String searchString){
+        return new ResponseEntity<>(productRepository.findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(searchString, Status.PRIVATE), HttpStatus.OK);
     }
 }
