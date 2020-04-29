@@ -87,7 +87,7 @@ class UserPageContainer extends Component {
        
        : <div>
         <ProductSearch  handleSearch = {this.handleSearch}/>
-        <SearchResultIndex products= {this.state.foundProducts}/>
+        <SearchResultIndex products= {this.state.foundProducts} userId={this.props.match.params.id}/>
         <BorrowedProductList products={this.state.user.borrowedProducts}/>
         </div>
         }
@@ -96,17 +96,7 @@ class UserPageContainer extends Component {
     )
   }
 }
-// render() {
-//   const isLoggedIn = this.state.isLoggedIn;
-//   return (
-//     <div>
-//       {isLoggedIn
-//         ? <LogoutButton onClick={this.handleLogoutClick} />
-//         : <LoginButton onClick={this.handleLoginClick} />
-//       }
-//     </div>
-//   );
-// }
+
 
 export default UserPageContainer
 

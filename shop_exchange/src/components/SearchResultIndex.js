@@ -1,5 +1,6 @@
 import React from 'react';
 import BorrowProductsDetails from './BorrowProductsDetails';
+import Request from '../helpers/request';
 
 
 const SearchResultIndex = (props) => {
@@ -19,6 +20,17 @@ const SearchResultIndex = (props) => {
         return formatted
     }
 
+    const handleBorrowing = (id, qty) => {
+        console.log(props.products, id, qty)
+        const borrowedProducts = props.products.filter(prod => prod.productDescription.id === id).slice(0, qty)
+        const request = new Request()
+        borrowedProducts.forEach(prod => {
+            request.post(`/api/products/${prod.id}/borrow/${props.userId}`,{})
+        })
+
+
+    }
+
 
     const formatProducts = (products) => {
         const result = [];
@@ -29,12 +41,7 @@ const SearchResultIndex = (props) => {
             if(!map.has(product.productDescription.id)){
                  map.set(product.productDescription.id, true);
                 result.push({
-                     name: product.productDescription.name,
-                     description: product.productDescription.description,
-                     category: product.productDescription.category,
-                     status: product.productDescription.status,
-                     rentCondition: product.productDescription.rentCondition,
-                     replaceStatus: product.productDescription.replaceStatus,
+                    ...product.productDescription,
                      qty: productCount[product.productDescription.id]
                     });
                  }
@@ -43,7 +50,7 @@ const SearchResultIndex = (props) => {
     }
 
     const productNodes = formatProducts(props.products).map((prod, index) => {
-        return <BorrowProductsDetails key={index} product={prod} />
+        return <BorrowProductsDetails key={index} product={prod} index={index} handleBorrowing={handleBorrowing}/>
     })
     
   return (

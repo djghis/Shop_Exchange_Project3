@@ -52,16 +52,16 @@ public class DataLoader implements ApplicationRunner {
         User ggSunflowers = new User("GG Flowers","6 Millar Place, EH10 2HQ","0131 14 14 14","gg@hotmail.com");
         userRepository.save(ggSunflowers);
 
-        ProductDescription fishBowl20 = new ProductDescription("fish bowl 20cm", "It's a fish bowl", vases, Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        ProductDescription fishBowl20 = new ProductDescription("fish bowl 20cm", "It's a fish bowl", vases, Status.LEND, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
         productDescriptionRepository.save(fishBowl20);
 
-        ProductDescription fluteVase20 = new ProductDescription("flute vase 20cm","It is a flute vase",vases,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,23);
+        ProductDescription fluteVase20 = new ProductDescription("flute vase 20cm","It is a flute vase",vases,Status.RENT,RentCondition.DIRTY,ReplaceStatus.FEE,23);
         productDescriptionRepository.save(fluteVase20);
 
-        ProductDescription fishBasket30 = new ProductDescription("fish basket 30cm", "It's a fish basket", baskets,Status.PRIVATE, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
+        ProductDescription fishBasket30 = new ProductDescription("fish basket 30cm", "It's a fish basket", baskets,Status.RENT, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
         productDescriptionRepository.save(fishBasket30);
 
-        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,Status.PRIVATE,RentCondition.DIRTY,ReplaceStatus.FEE,50);
+        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,Status.LEND,RentCondition.DIRTY,ReplaceStatus.FEE,50);
         productDescriptionRepository.save(fluteVase70);
 
 
