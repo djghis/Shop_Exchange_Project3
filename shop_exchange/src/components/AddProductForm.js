@@ -11,9 +11,9 @@ class AddProductForm extends Component {
         description: "",
         price: 0,
         category: null,
-        status: "PRIVATE",
-        rentCondition: "CLEAN",
-        replaceStatus: "NEW"
+        status: "",
+        rentCondition: "",
+        replaceStatus: ""
       },
       categories:[]
     }
@@ -79,6 +79,19 @@ handlePost(productDescription){
       <select name="category" onChange={this.handleCategory} defaultValue="select-category">
         <option disabled value="select-category">Select a category</option>
         {categoryOptions}
+      </select>
+      <select name ="status" onChange={this.handleChange} defaultValue="select-status">
+        <option value="PRIVATE">Private</option>
+        <option value="RENT">Rent</option>
+        <option value="LEND">Lend</option>
+      </select>
+      <select name ="rentCondition" onChange={this.handleChange} defaultValue="select-rentCondition">
+        <option value="CLEAN">Clean/Clean</option>
+        <option value="DIRTY">Dirty/Dirty</option>
+      </select>
+      <select name ="replaceStatus" onChange={this.handleChange} defaultValue="select-replaceStatus">
+        <option value="NEW">New for old</option>
+        <option value="FEE">Pay fee</option>
       </select>
       <button type="submit">Save</button>
       </form>
