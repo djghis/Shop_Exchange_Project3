@@ -13,10 +13,9 @@ function App() {
       <React.Fragment>
          <NavBar/>
          <Switch>
-         <Route exact path="/" component={Homepage} />
-         <Route exact path="/admin" component={AdminContainer}/>
-         {/* <Route exact path="/admin" component={admin} /> */}
-          <Route exact path="/user/:id" component={UserPageContainer}/>
+         <Route path="/admin" component={AdminContainer}/>
+         <Route path="/user/:id" component={UserPageContainer}/>
+         <Route component={Homepage} />
         </Switch>
      </React.Fragment>
     </Router>

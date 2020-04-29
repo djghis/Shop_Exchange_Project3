@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import UsersContainer from './UsersContainer'
-import UserPageContainer from './UserPageContainer'
+import UsersContainer from './UsersContainer'
 
 export class Homepage extends Component {
     
@@ -15,9 +14,7 @@ export class Homepage extends Component {
     render() {
         return (
             <div>
-                {/* <button className="admin-button">Admin</button> */}
-                {/* <UsersContainer /> */}
-                <UserPageContainer />
+                <UsersContainer />
             </div>
         )
     }
