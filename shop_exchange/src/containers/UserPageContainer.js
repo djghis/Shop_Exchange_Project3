@@ -4,16 +4,20 @@ import UserDetails from '../components/UserDetails'
 import UserProductIndex from '../components/UserProductIndex'
 import AddProductForm from '../components/AddProductForm'
 import ProductSearch from '../components/ProductSearch'
+import SearchResultIndex from '../components/SearchResultIndex'
 
 class UserPageContainer extends Component {
     constructor(props) {
       super(props)
       this.state = {
          user: null,
-         foundProducts:[]
+         foundProducts:[],
+         myProducts: true
       }
       this.updateProducts = this.updateProducts.bind(this);
       this.handleSearch = this.handleSearch.bind(this);
+      this.handleMyProducts = this.handleMyProducts.bind(this);
+      this.handleBorrowedProducts = this.handleBorrowedProducts.bind(this);
     }
     
     componentDidMount() {
@@ -46,6 +50,18 @@ class UserPageContainer extends Component {
       })
     }
 
+    handleMyProducts(){
+      this.setState({
+        myProducts: true
+      })
+    }
+
+    handleBorrowedProducts(){
+      this.setState({
+        myProducts: false
+      })
+    }
+
     
 
   render() {
@@ -54,20 +70,41 @@ class UserPageContainer extends Component {
         return <p>Loading....</p>
     }
 
+     const myProducts = this.state.myProducts; 
     return (
       <div className="user-page">
         <UserDetails user={this.state.user}/>
         <div className="user-buttons">
-            <button>My Products</button>
-            <button>Borrowed Products</button>
+            <button onClick={this.handleMyProducts}>My Products</button>
+            <button onClick={this.handleBorrowedProducts}>Borrowed Products</button>
         </div>
+         {myProducts 
+         ? <div>
         <AddProductForm onCreate={this.handleSubmit} userId={this.props.match.params.id} updateProducts={this.updateProducts}/>
         <UserProductIndex products={this.state.user.products}/>
+        </div>
+       
+       : <div>
         <ProductSearch  handleSearch = {this.handleSearch}/>
+        <SearchResultIndex products= {this.state.foundProducts}/>
+        </div>
+        }
+         
       </div>
     )
   }
 }
+// render() {
+//   const isLoggedIn = this.state.isLoggedIn;
+//   return (
+//     <div>
+//       {isLoggedIn
+//         ? <LogoutButton onClick={this.handleLogoutClick} />
+//         : <LoginButton onClick={this.handleLoginClick} />
+//       }
+//     </div>
+//   );
+// }
 
 export default UserPageContainer
 
