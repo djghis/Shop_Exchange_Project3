@@ -38,7 +38,7 @@ class UserPageContainer extends Component {
             <button>My Products</button>
             <button>Borrowed Products</button>
         </div>
-        <AddProductForm    onCreate={this.handleSubmit}/>
+        <AddProductForm    onCreate={this.handleSubmit} userId={this.props.match.params.id}/>
         <UserProductIndex products={this.state.user.products}/>
       </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ProductDetails = (props) => {
-    console.log(props);
+ 
     
   return (
     <div className="product-details">
@@ -15,7 +15,6 @@ const ProductDetails = (props) => {
       <p>status: {props.product.status} </p>
       <p>rent conditions: {props.product.rentConditions} </p>
       <p>replace status: {props.product.replaceStatus} </p>
-      
       </details>
     </div>
   )

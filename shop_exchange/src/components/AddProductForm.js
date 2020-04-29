@@ -11,15 +11,17 @@ class AddProductForm extends Component {
         description: "",
         price: 0,
         category: null,
-        status: "",
-        rentCondition: "",
-        replaceStatus: ""
+        status: "PRIVATE",
+        rentCondition: "CLEAN",
+        replaceStatus: "NEW"
       },
-      categories:[]
+      categories:[],
+      qty: 0
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleCategory = this.handleCategory.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleQuantity = this.handleQuantity.bind(this);
   }
   handleChange(event){
     let propertyName = event.target.name;
@@ -27,6 +29,12 @@ class AddProductForm extends Component {
     product[propertyName] = event.target.value;
     this.setState({product: product})
   }
+
+  handleQuantity(event){
+    let qty = parseInt(event.target.value);
+    this.setState({qty:qty})
+  }
+
   handleCategory(event){
     const index = parseInt(event.target.value)
     const selectedCategory = this.state.categories[index]
@@ -34,10 +42,25 @@ class AddProductForm extends Component {
     product['category'] = selectedCategory
     this.setState({product: product})
   }
+
   handleSubmit(event){
     event.preventDefault();
     this.handlePost(this.state.product);
   }
+
+  addProduct(productDescription) {
+    const request = new Request()
+    let product = {user:{id:this.props.userId},
+    productDescription:productDescription
+    }
+    console.log(product);
+    
+    for (let i = 0; i < this.state.qty; i++) {
+      request.post("/api/products", product)
+    }
+    
+  }
+
 
   //create a description
 //assign description to product
@@ -45,8 +68,12 @@ class AddProductForm extends Component {
 handlePost(productDescription){
   const request = new Request();
   console.log(productDescription);
-  
   request.post("/api/product_description", productDescription)
+  .then((res)=>res.json())
+  .then((res)=>{
+    this.addProduct(res)
+  }
+  )
   };
 
 
@@ -93,6 +120,7 @@ handlePost(productDescription){
         <option value="NEW">New for old</option>
         <option value="FEE">Pay fee</option>
       </select>
+      <input name="qty" type="number" placeholder="quantity" onChange={this.handleQuantity} value={this.state.qty}/>
       <button type="submit">Save</button>
       </form>
       </div>
