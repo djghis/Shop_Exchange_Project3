@@ -28,7 +28,7 @@ class AddUserForm extends Component {
   }
   render(){
     return (
-      <div>
+      <div className="add-user-form">
       <form onSubmit={this.handleSubmit}>
       <input type="text" placeholder="Name" name="name" onChange={this.handleChange} value={this.state.user.name} />
       <input type="text" placeholder="Address" name="address" onChange={this.handleChange} value={this.state.user.address} />
