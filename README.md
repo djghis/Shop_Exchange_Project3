@@ -16,7 +16,7 @@ A user should be able to:
 ## Technologies Used
 Java/Sring, React, SQL, RESTful, Html,Css.
 
-## Run me
+## Run me (Only runs from develop for now)
 npm install from the main folder and run ShopExchangeApplication.java.
 open shop_exchange folder and run npm start http://localhost:3000 should open in your default browser.
 
