@@ -17,7 +17,7 @@ A user should be able to:
 Java/Sring, React, SQL, RESTful, Html,Css.
 
 ## Run me (Only runs from develop for now)
-npm install from the main folder and run ShopExchangeApplication.java.
+npm install from the main folder and run ShopExchangeApplication.java using your favourite IDE ( I have used IntelliJ ).
 open shop_exchange folder and run npm start http://localhost:3000 should open in your default browser.
 
 ## Example Extensions
