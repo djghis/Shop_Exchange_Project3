@@ -25,16 +25,40 @@ public class Product {
     @JoinColumn(name="borrower_id")
     private User borrower;
 
+    @Column
+    private String name;
 
+    @Column
+    private String description;
+
+    //    @JsonIgnoreProperties(value={"productsde"})
     @ManyToOne
-    @JoinColumn(name="description_id", nullable=false)
-    private ProductDescription productDescription;
+    @JoinColumn(name="category_id", nullable=false)
+    private Category category;
+
+    @Column
+    private String status;
+
+    @Column
+    private String rentCondition;
+
+    @Column
+    private String replaceStatus;
+
+    @Column
+    private int price;
 
 
-    public Product(User user, ProductDescription productDescription) {
+    public Product(User user, String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price) {
         this.user = user;
         this.borrower = null;
-        this.productDescription = productDescription;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.status = status;
+        this.rentCondition = rentCondition;
+        this.replaceStatus = replaceStatus;
+        this.price = price;
     }
 
     public Product() {
@@ -64,11 +88,59 @@ public class Product {
         this.borrower = borrower;
     }
 
-    public ProductDescription getProductDescription() {
-        return productDescription;
+    public String getName() {
+        return name;
     }
 
-    public void setProductDescription(ProductDescription description) {
-        this.productDescription = description;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRentCondition() {
+        return rentCondition;
+    }
+
+    public void setRentCondition(String rentCondition) {
+        this.rentCondition = rentCondition;
+    }
+
+    public String getReplaceStatus() {
+        return replaceStatus;
+    }
+
+    public void setReplaceStatus(String replaceStatus) {
+        this.replaceStatus = replaceStatus;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

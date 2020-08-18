@@ -28,26 +28,20 @@ public class ProductDescription {
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
 
-    @Enumerated(EnumType.STRING)
     @Column
-    private Status status;
+    private String status;
 
-    @Enumerated(EnumType.STRING)
     @Column
-    private RentCondition rentCondition;
+    private String rentCondition;
 
-    @Enumerated(EnumType.STRING)
     @Column
-    private ReplaceStatus replaceStatus;
+    private String replaceStatus;
 
     @Column
     private int price;
 
-    @JsonIgnore
-    @OneToMany(mappedBy="productDescription")
-    private List<Product> products;
 
-    public ProductDescription(String name, String description, Category category, Status status, RentCondition rentCondition, ReplaceStatus replaceStatus, int price) {
+    public ProductDescription(String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price) {
         this.name = name;
         this.description = description;
         this.category = category;
@@ -55,7 +49,6 @@ public class ProductDescription {
         this.rentCondition = rentCondition;
         this.replaceStatus = replaceStatus;
         this.price = price;
-        this.products = new ArrayList<>();
     }
 
     public ProductDescription() {
@@ -121,15 +114,4 @@ public class ProductDescription {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
 }
