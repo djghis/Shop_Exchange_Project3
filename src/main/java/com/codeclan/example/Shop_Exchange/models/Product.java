@@ -20,10 +20,10 @@ public class Product {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name="borrower_id")
-    private User borrower;
+//    @JsonIgnore
+//    @ManyToOne
+//    @JoinColumn(name="borrower_id")
+//    private User borrower;
 
     @Column
     private String name;
@@ -46,12 +46,14 @@ public class Product {
     private String replaceStatus;
 
     @Column
+    private int quantity;
+
+    @Column
     private int price;
 
-
-    public Product(User user, String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price) {
+    public Product(User user, String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price, int quantity) {
         this.user = user;
-        this.borrower = null;
+//        this.borrower = null;
         this.name = name;
         this.description = description;
         this.category = category;
@@ -80,13 +82,13 @@ public class Product {
         this.user = user;
     }
 
-    public User getBorrower() {
-        return borrower;
-    }
-
-    public void setBorrower(User borrower) {
-        this.borrower = borrower;
-    }
+//    public User getBorrower() {
+//        return borrower;
+//    }
+//
+//    public void setBorrower(User borrower) {
+//        this.borrower = borrower;
+//    }
 
     public String getName() {
         return name;
@@ -142,5 +144,13 @@ public class Product {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
