@@ -1,5 +1,7 @@
 package com.codeclan.example.Shop_Exchange.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ public class Category {
 
     @JsonIgnore
 //    @JsonBackReference
-    @OneToMany(mappedBy="category")
+    @OneToMany(mappedBy="category", orphanRemoval = true)
     private List<Product> products;
 
     public Category (String name) {
