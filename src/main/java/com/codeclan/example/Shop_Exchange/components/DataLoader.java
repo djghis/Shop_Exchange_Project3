@@ -1,6 +1,6 @@
 package com.codeclan.example.Shop_Exchange.components;
 
-import com.codeclan.example.Shop_Exchange.models.*;
+import  com.codeclan.example.Shop_Exchange.models.*;
 import com.codeclan.example.Shop_Exchange.repositories.CategoryRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductDescriptionRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;

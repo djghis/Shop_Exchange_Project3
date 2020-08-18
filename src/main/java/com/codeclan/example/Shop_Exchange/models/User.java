@@ -14,8 +14,6 @@ import java.util.List;
 @Table(name="users")
 public class User {
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +26,6 @@ public class User {
 
     @Column(name="phone_number")
     private String phone_number;
-
 
     @Column(name="email")
     private String email;
