@@ -2,7 +2,7 @@ package com.codeclan.example.Shop_Exchange.components;
 
 import  com.codeclan.example.Shop_Exchange.models.*;
 import com.codeclan.example.Shop_Exchange.repositories.CategoryRepository;
-import com.codeclan.example.Shop_Exchange.repositories.ProductDescriptionRepository;
+//import com.codeclan.example.Shop_Exchange.repositories.ProductDescriptionRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    ProductDescriptionRepository productDescriptionRepository;
+//    @Autowired
+//    ProductDescriptionRepository productDescriptionRepository;
 
     public DataLoader(){
 
@@ -52,45 +52,25 @@ public class DataLoader implements ApplicationRunner {
         User ggSunflowers = new User("GG Flowers","6 Millar Place, EH10 2HQ","0131 14 14 14","gg@hotmail.com");
         userRepository.save(ggSunflowers);
 
-        ProductDescription fishBowl20 = new ProductDescription("fish bowl 20cm", "It's a fish bowl", vases, Status.LEND, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
-        productDescriptionRepository.save(fishBowl20);
-
-        ProductDescription fluteVase20 = new ProductDescription("flute vase 20cm","It is a flute vase",vases,Status.RENT,RentCondition.DIRTY,ReplaceStatus.FEE,23);
-        productDescriptionRepository.save(fluteVase20);
-
-        ProductDescription fishBasket30 = new ProductDescription("fish basket 30cm", "It's a fish basket", baskets,Status.RENT, RentCondition.CLEAN, ReplaceStatus.NEW, 10);
-        productDescriptionRepository.save(fishBasket30);
-
-        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,Status.LEND,RentCondition.DIRTY,ReplaceStatus.FEE,50);
-        productDescriptionRepository.save(fluteVase70);
+//        ProductDescription fishBowl20 = new ProductDescription("fish bowl 20cm", "It's a fish bowl", vases, "Lend", "Clean", "New", 10);
+//
+//        ProductDescription fluteVase20 = new ProductDescription("flute vase 20cm","It is a flute vase",vases,"Rent","Dirty","Fee",23);
+//
+//        ProductDescription fishBasket30 = new ProductDescription("fish basket 30cm", "It's a fish basket", baskets, "Rent", "Clean", "New", 10);
+//
+//        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,"Lend","Dirty","Fee",50);
 
 
-        Product prod1 = new Product(lilyPad,fishBowl20);
+        Product prod1 = new Product(lilyPad, "fish bowl 20cm", "It's a fish bowl", vases, "Lend", "Clean", "New", 10, 10 );
         productRepository.save(prod1);
 
-        Product prod2 = new Product(lilyPad,fishBowl20);
-        productRepository.save(prod2);
 
-        Product prod3 = new Product(lilyPad,fishBowl20);
-        productRepository.save(prod3);
-
-        Product prod4 = new Product(lilyPad,fishBowl20);
-        productRepository.save(prod4);
-
-        Product prod5 = new Product(lilyPad, fluteVase20);
+        Product prod5 = new Product(lilyPad, "flute vase 20cm","It is a flute vase",vases,"Rent","Dirty","Fee",23, 10);
         productRepository.save(prod5);
 
-        Product prod6 = new Product(lilyPad, fluteVase20);
-        productRepository.save(prod6);
 
-        Product prod7 = new Product(lilyPad, fluteVase20);
-        productRepository.save(prod7);
-
-        Product prod8 = new Product(lilyPad, fluteVase20);
-        productRepository.save(prod8);
-
-        vasileiosFlowers.borrowProduct(prod8);
-        productRepository.save(prod8);
+//        vasileiosFlowers.borrowProduct(prod1);
+//        productRepository.save(prod1);
 
     }
 

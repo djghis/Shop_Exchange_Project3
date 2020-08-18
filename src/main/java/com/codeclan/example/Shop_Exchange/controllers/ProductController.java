@@ -39,7 +39,7 @@ public class ProductController {
     public ResponseEntity<Product> updateBorrower(@PathVariable Long id,@PathVariable Long user_id){
         Product product = productRepository.findById(id).get();
         User borrower = userRepository.findById(user_id).get();
-        borrower.borrowProduct(product);
+//        borrower.borrowProduct(product);
         productRepository.save(product);
         return new ResponseEntity<>(product, HttpStatus.OK);
     }
@@ -62,9 +62,9 @@ public class ProductController {
         productRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
-
-    @GetMapping(value="/search/{searchString}")
-    public ResponseEntity<List<Product>> findProductByNameOrDescription(@PathVariable String searchString){
-        return new ResponseEntity<>(productRepository.findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(searchString, Status.PRIVATE), HttpStatus.OK);
-    }
+//
+//    @GetMapping(value="/search/{searchString}")
+//    public ResponseEntity<List<Product>> findProductByNameOrDescription(@PathVariable String searchString){
+//        return new ResponseEntity<>(productRepository.findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(searchString, Status.PRIVATE), HttpStatus.OK);
+//    }
 }

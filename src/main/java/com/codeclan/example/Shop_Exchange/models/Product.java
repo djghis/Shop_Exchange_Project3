@@ -20,18 +20,12 @@ public class Product {
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
-//    @JsonIgnore
-//    @ManyToOne
-//    @JoinColumn(name="borrower_id")
-//    private User borrower;
-
     @Column
     private String name;
 
     @Column
     private String description;
 
-    //    @JsonIgnoreProperties(value={"productsde"})
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
@@ -53,7 +47,6 @@ public class Product {
 
     public Product(User user, String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price, int quantity) {
         this.user = user;
-//        this.borrower = null;
         this.name = name;
         this.description = description;
         this.category = category;
@@ -61,6 +54,7 @@ public class Product {
         this.rentCondition = rentCondition;
         this.replaceStatus = replaceStatus;
         this.price = price;
+        this.quantity = quantity;
     }
 
     public Product() {
@@ -82,13 +76,6 @@ public class Product {
         this.user = user;
     }
 
-//    public User getBorrower() {
-//        return borrower;
-//    }
-//
-//    public void setBorrower(User borrower) {
-//        this.borrower = borrower;
-//    }
 
     public String getName() {
         return name;

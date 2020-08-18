@@ -37,8 +37,8 @@ public class User {
 
 //    @JsonIgnore
 //    @JsonBackReference
-    @OneToMany(mappedBy = "borrower")
-    private List<Product> borrowedProducts;
+//    @OneToMany(mappedBy = "borrower")
+//    private List<Product> borrowedProducts;
 
     public User(String name, String address, String phone_number, String email) {
         this.name = name;
@@ -46,7 +46,7 @@ public class User {
         this.phone_number = phone_number;
         this.email = email;
         this.products = new ArrayList<>();
-        this.borrowedProducts = new ArrayList<>();
+//        this.borrowedProducts = new ArrayList<>();
     }
 
     public User() {
@@ -100,30 +100,30 @@ public class User {
         this.products = products;
     }
 
-    public List<Product> getBorrowedProducts() {
-        return borrowedProducts;
-    }
-
-    public void setBorrowedProducts(List<Product> borrowedProducts) {
-        this.borrowedProducts = borrowedProducts;
-    }
+//    public List<Product> getBorrowedProducts() {
+//        return borrowedProducts;
+//    }
+//
+//    public void setBorrowedProducts(List<Product> borrowedProducts) {
+//        this.borrowedProducts = borrowedProducts;
+//    }
 
     public void addProduct(Product product){
         this.products.add(product);
     }
 
-    public void borrowProduct(Product product){
-        this.borrowedProducts.add(product);
-        product.setBorrower(this);
-    }
+//    public void borrowProduct(Product product){
+//        this.borrowedProducts.add(product);
+////        product.setBorrower(this);
+//    }
 
     public void deleteProduct(Product product){
         this.products.remove(product);
     }
 
-    public void returnProduct(Product product){
-        this.borrowedProducts.remove(product);
-    }
+//    public void returnProduct(Product product){
+//        this.borrowedProducts.remove(product);
+//    }
 }
 
 

@@ -12,7 +12,7 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 //findByproductdescriptiondescriptionORproductdescriptionname
-    List<Product> findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(String string, Status status);
+//    List<Product> findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(String string, Status status);
     //findBYproductdescriptionstatus
     //findByitemborrowed
 }

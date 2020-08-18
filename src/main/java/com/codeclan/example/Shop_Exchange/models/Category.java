@@ -19,11 +19,11 @@ public class Category {
     @JsonIgnore
 //    @JsonBackReference
     @OneToMany(mappedBy="category")
-    private List<ProductDescription> productDescriptions;
+    private List<Product> products;
 
     public Category (String name) {
         this.name = name;
-        this.productDescriptions = new ArrayList<>();
+        this.products = new ArrayList<>();
     }
 
     public Category() {
@@ -45,11 +45,11 @@ public class Category {
         this.name = name;
     }
 
-    public List<ProductDescription> getProductDescriptions() {
-        return productDescriptions;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setProductDescriptions(List<ProductDescription> productDescriptions) {
-        this.productDescriptions = productDescriptions;
+    public void setProductDescriptions(List<Product> products) {
+        this.products = products;
     }
 }
