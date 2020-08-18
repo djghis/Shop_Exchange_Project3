@@ -2,7 +2,6 @@ package com.codeclan.example.Shop_Exchange.components;
 
 import  com.codeclan.example.Shop_Exchange.models.*;
 import com.codeclan.example.Shop_Exchange.repositories.CategoryRepository;
-//import com.codeclan.example.Shop_Exchange.repositories.ProductDescriptionRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
