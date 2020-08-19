@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="products")
@@ -26,6 +28,7 @@ public class Product {
     @Column
     private String description;
 
+
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
     private Category category;
@@ -45,6 +48,12 @@ public class Product {
     @Column
     private int price;
 
+    @JsonIgnore
+    @OneToMany(mappedBy="product")
+    private List<Rental> rentals;
+
+
+
     public Product(User user, String name, String description, Category category, String status, String rentCondition, String replaceStatus, int price, int quantity) {
         this.user = user;
         this.name = name;
@@ -55,6 +64,7 @@ public class Product {
         this.replaceStatus = replaceStatus;
         this.price = price;
         this.quantity = quantity;
+        this.rentals = new ArrayList<>();
     }
 
     public Product() {
@@ -139,5 +149,13 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
+    public void setRentals(List<Rental> rentals) {
+        this.rentals = rentals;
     }
 }

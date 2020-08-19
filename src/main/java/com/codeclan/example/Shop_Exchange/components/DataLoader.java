@@ -3,6 +3,7 @@ package com.codeclan.example.Shop_Exchange.components;
 import  com.codeclan.example.Shop_Exchange.models.*;
 import com.codeclan.example.Shop_Exchange.repositories.CategoryRepository;
 import com.codeclan.example.Shop_Exchange.repositories.ProductRepository;
+import com.codeclan.example.Shop_Exchange.repositories.RentalRepository;
 import com.codeclan.example.Shop_Exchange.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,9 @@ public class DataLoader implements ApplicationRunner {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    RentalRepository rentalRepository;
 
 //    @Autowired
 //    ProductDescriptionRepository productDescriptionRepository;
@@ -64,12 +68,15 @@ public class DataLoader implements ApplicationRunner {
         productRepository.save(prod1);
 
 
-        Product prod5 = new Product(lilyPad, "flute vase 20cm","It is a flute vase",vases,"Rent","Dirty","Fee",23, 10);
+        Product prod5 = new Product(ggSunflowers, "flute vase 20cm","It is a flute vase",vases,"Rent","Dirty","Fee",23, 10);
         productRepository.save(prod5);
 
 
 //        vasileiosFlowers.borrowProduct(prod1);
 //        productRepository.save(prod1);
+
+        Rental rental1 = new Rental(lilyPad, prod5, 4, "please and thank you", "january", "december"  );
+        rentalRepository.save(rental1);
 
     }
 

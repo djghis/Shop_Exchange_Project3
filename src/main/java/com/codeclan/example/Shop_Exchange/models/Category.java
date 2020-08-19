@@ -1,14 +1,13 @@
 package com.codeclan.example.Shop_Exchange.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name= "categories")
+@Table(name="categories")
 public class Category {
 
     @Id

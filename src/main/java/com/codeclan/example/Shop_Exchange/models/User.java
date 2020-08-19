@@ -35,6 +35,10 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Product> products;
 
+
+
+    @OneToMany(mappedBy = "renter")
+    private List<Rental> rentals;
 //    @JsonIgnore
 //    @JsonBackReference
 //    @OneToMany(mappedBy = "borrower")
@@ -46,6 +50,7 @@ public class User {
         this.phone_number = phone_number;
         this.email = email;
         this.products = new ArrayList<>();
+        this.rentals = new ArrayList<>();
 //        this.borrowedProducts = new ArrayList<>();
     }
 
@@ -124,6 +129,14 @@ public class User {
 //    public void returnProduct(Product product){
 //        this.borrowedProducts.remove(product);
 //    }
+
+    public List<Rental> getRentals() {
+        return rentals;
+    }
+
+    public void setRentals(List<Rental> rentals) {
+        this.rentals = rentals;
+    }
 }
 
 
