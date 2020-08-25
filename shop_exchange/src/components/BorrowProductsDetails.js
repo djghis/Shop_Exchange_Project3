@@ -29,7 +29,7 @@ class BorrowProductsDetails extends Component {
       <details>
       <summary>
       <p>name: {this.props.product.name} </p>
-      <p>qty:{this.props.product.qty}</p>
+      <p>qty:{this.props.product.quantity}</p>
       </summary>
       <p>desc: {this.props.product.description} </p>
       <p>category: {this.props.product.category.name} </p>

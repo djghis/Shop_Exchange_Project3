@@ -88,7 +88,7 @@ class UserPageContainer extends Component {
        : <div>
         <ProductSearch  handleSearch = {this.handleSearch}/>
         <SearchResultIndex products= {this.state.foundProducts} userId={this.props.match.params.id}/>
-        <BorrowedProductList products={this.state.user.borrowedProducts}/>
+        <BorrowedProductList products={this.state.user.rentals}/>
         </div>
         }
          
