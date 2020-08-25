@@ -63,8 +63,13 @@ public class ProductController {
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
 //
+    @GetMapping(value="/search/{searchString}")
+    public ResponseEntity<List<Product>> findProductByNameOrDescription(@PathVariable String searchString){
+        return new ResponseEntity<>(productRepository.findDistinctByNameContainsIgnoreCaseAndStatusNot(searchString, "private"), HttpStatus.OK);
+    }
+
 //    @GetMapping(value="/search/{searchString}")
 //    public ResponseEntity<List<Product>> findProductByNameOrDescription(@PathVariable String searchString){
-//        return new ResponseEntity<>(productRepository.findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(searchString, Status.PRIVATE), HttpStatus.OK);
+//        return new ResponseEntity<>(productRepository.findDistinctByNameContainsIgnoreCase(searchString), HttpStatus.OK);
 //    }
 }

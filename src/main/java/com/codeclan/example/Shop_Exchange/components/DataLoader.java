@@ -64,11 +64,11 @@ public class DataLoader implements ApplicationRunner {
 //        ProductDescription fluteVase70 = new ProductDescription("flute vase 70cm","It is a flute vase",vases,"Lend","Dirty","Fee",50);
 
 
-        Product prod1 = new Product(lilyPad, "fish bowl 20cm", "It's a fish bowl", vases, "Lend", "Clean", "New", 10, 10 );
+        Product prod1 = new Product(lilyPad, "fish bowl 20cm", "It's a fish bowl", vases, "rent", "Clean", "New", 10, 10 );
         productRepository.save(prod1);
 
 
-        Product prod5 = new Product(ggSunflowers, "flute vase 20cm","It is a flute vase",vases,"Rent","Dirty","Fee",23, 10);
+        Product prod5 = new Product(ggSunflowers, "flute vase 20cm","It is a flute vase",vases,"lend","Dirty","Fee",23, 10);
         productRepository.save(prod5);
 
 

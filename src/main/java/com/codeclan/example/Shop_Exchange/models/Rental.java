@@ -17,11 +17,12 @@ public class Rental {
 
 //    @JsonIgnore
 //    @JsonBackReference
-@JsonIgnoreProperties(value={"name", "address", "phone_number", "email", "products", "rentals"})
+    @JsonIgnoreProperties(value={"name", "address", "phone_number", "email", "products", "rentals"})
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false)
     private User renter;
 
+    @JsonIgnoreProperties(value={"rentals"})
     @ManyToOne
     @JoinColumn(name="product_id", nullable = false)
     private Product product;

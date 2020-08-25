@@ -23,7 +23,7 @@
 //    @Column
 //    private String description;
 //
-////    @JsonIgnoreProperties(value={"productsde"})
+////    @JsonIgnoreProperties(value={"productside"})
 //    @ManyToOne
 //    @JoinColumn(name="category_id", nullable=false)
 //    private Category category;

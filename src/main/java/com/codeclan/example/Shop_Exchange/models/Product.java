@@ -17,7 +17,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnoreProperties(value={"name", "address", "phone_number", "email", "products", "borrowedProducts"})
+    @JsonIgnoreProperties(value={"name", "address", "phone_number", "email", "products", "rentals"})
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
@@ -48,7 +48,8 @@ public class Product {
     @Column
     private int price;
 
-    @JsonIgnore
+//    @JsonIgnore
+    @JsonIgnoreProperties(value={"product"})
     @OneToMany(mappedBy="product")
     private List<Rental> rentals;
 

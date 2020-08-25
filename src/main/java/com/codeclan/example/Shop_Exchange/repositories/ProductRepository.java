@@ -12,7 +12,8 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 //findByproductdescriptiondescriptionORproductdescriptionname
-//    List<Product> findDistinctByProductDescriptionNameContainsIgnoreCaseAndProductDescriptionStatusNot(String string, Status status);
+    List<Product> findDistinctByNameContainsIgnoreCaseAndStatusNot(String string, String status);
+//    List<Product> findDistinctByNameContainsIgnoreCase(String string);
     //findBYproductdescriptionstatus
     //findByitemborrowed
 }
