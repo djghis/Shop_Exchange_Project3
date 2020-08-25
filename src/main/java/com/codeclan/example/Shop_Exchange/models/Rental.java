@@ -1,6 +1,8 @@
 package com.codeclan.example.Shop_Exchange.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -13,7 +15,9 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JsonIgnore
+//    @JsonIgnore
+//    @JsonBackReference
+@JsonIgnoreProperties(value={"name", "address", "phone_number", "email", "products", "rentals"})
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false)
     private User renter;
